@@ -6,10 +6,13 @@ module.exports = {
     entry: ['./src/index.js'],
     output: {
         path: path.join(__dirname, 'dest'),
-        filename: 'bundle.min.js'
+        // filename: 'bundle.min.js',
+        filename: 'bundle.[contenthash].js',
+        clean: true
     },
     devServer: {
-        port: 8000
+        port: 8000,
+        static: path.join(__dirname, 'dest')
     },
     module: {
         rules: [{
@@ -20,7 +23,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss$/,
+                test: /\.s[ac]ss$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
@@ -29,9 +32,13 @@ module.exports = {
             }
         ]
     },
-    plugins: [new MiniCssExtractPlugin(),
+    plugins: [new MiniCssExtractPlugin({
+        // filename: '[name].[contenthash:6].css',
+        filename: 'bundle.[contenthash:6].css',
+    }),
         new HTMLWebpackPlugin({
-            template: './src/index.html'
+            template: path.resolve(__dirname, './src/index.html'),
+            filename: 'index.html'
         })
     ],
 }

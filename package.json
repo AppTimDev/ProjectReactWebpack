@@ -4,7 +4,7 @@
   "description": "simple project use webpack and react",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --mode development",
+    "dev": "webpack serve --mode development --open --hot",
     "build": "webpack --mode production"
   },
   "author": "AppTimDev",
@@ -16,6 +16,7 @@
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "sass": "^1.56.0",
     "sass-loader": "^13.1.0",

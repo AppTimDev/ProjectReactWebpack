@@ -8,6 +8,8 @@ module.exports = {
         path: path.join(__dirname, 'dest'),
         // filename: 'bundle.min.js',
         filename: 'bundle.[contenthash].js',
+
+        assetModuleFilename: 'images/[hash][ext]',
         clean: true
     },
     devServer: {
@@ -23,13 +25,17 @@ module.exports = {
                 }
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.(s[ac]ss|css)$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader',
                 ],
-            }
+            },
+            {
+                test: /\.(png|jpg|gif)$/i,
+                type: 'asset/resource'
+            }        
         ]
     },
     plugins: [new MiniCssExtractPlugin({

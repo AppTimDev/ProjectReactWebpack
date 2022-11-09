@@ -9,7 +9,8 @@ export function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/"  element={<Navbar />}>
+                {/* <Route path="/"  element={<Navbar />}> */}
+                <Route path="/">
                     <Route index element={<Home />} />
                     <Route path="Home" element={<Home />} />
                     <Route path="Login" element={<Login />} />

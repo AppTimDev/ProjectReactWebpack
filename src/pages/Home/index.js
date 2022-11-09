@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from './Header'
 
-import Main from './Main'
-import logo from '../images/cherry-blossom.jpg';
-console.log(logo); 
+import Main from './components/Main'
+import Header from './components/Header'
 
-export function App() {
+import logo from '../../images/cherry-blossom.jpg';
+// console.log(logo); 
+function Home() {
     return (
         <div className='wrapper'>
             <Header/>
@@ -14,3 +14,5 @@ export function App() {
         </div>
     );
 }
+
+export default Home

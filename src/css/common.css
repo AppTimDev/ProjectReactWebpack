@@ -54,9 +54,6 @@ html {
     min-height: 100vh;
 }
 
-a.link-email>svg {
-    fill: red;
-}
 .list-none{
     list-style-type: none;
 }	
@@ -492,4 +489,16 @@ a.link-email>svg {
         height: 100%;
     }
 
+}
+
+/*============ common use ============*/
+.card{
+    background-color: var(--bg-color-card-description);
+}
+.card-icon{
+    height: 30px;
+    width: 30px;
+}
+a.link-email>svg {
+    fill: red;
 }

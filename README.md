@@ -12,8 +12,10 @@ npm i -g webpack-cli
 npm i --save-dev webpack webpack-cli webpack-dev-server 
 npm i --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader
 npm i --save-dev css-loader sass-loader sass file-loader mini-css-extract-plugin html-webpack-plugin
+npm install --save-dev @svgr/webpack
 
 npm i --save react react-dom react-router-dom
+
 
 nvm install 16.13.2
 nvm use 16.13.2

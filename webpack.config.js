@@ -35,7 +35,12 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif)$/i,
                 type: 'asset/resource'
-            }        
+            },
+            {
+                test: /\.svg$/i,
+                issuer: /\.(js|jsx)$/,
+                use: ['@svgr/webpack']
+            } 
         ]
     },
     plugins: [new MiniCssExtractPlugin({

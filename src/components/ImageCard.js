@@ -2,7 +2,7 @@ import React from 'react'
 
 const card = (props) => {
     const styleSheets = {
-        'background-color': 'var(--bg-color-card-description)'
+        'backgroundColor': 'var(--bg-color-card-description)'
     }
     return (
         <a

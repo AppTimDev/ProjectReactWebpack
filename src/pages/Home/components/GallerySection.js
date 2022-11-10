@@ -12,9 +12,9 @@ const Subsection = (props) => {
         <div className='grid md:grid-cols-3 md:auto-rows-min gap-20px'>
             <Image className='w-full h-120px md:h-full' src={japCherry} alt="" rounded='4' square/>
             <Image className='w-full h-200px md:h-full' src={magnolia}  alt="" rounded='10' square/>
-            <div class="grid gap-15px">
+            <div className="grid gap-15px">
                 <Image className='w-full h-100px md:h-120px' src={cherry}  alt="" rounded='10' square/>
-                <div class="grid gap-15px grid-cols-2">
+                <div className="grid gap-15px grid-cols-2">
                     <Image className='w-full h-full' src={cherry2}  alt="" rounded='2' square/>
                     <Image className='w-full h-full' src={trees}  alt="" rounded='2' square/> 
                 </div>

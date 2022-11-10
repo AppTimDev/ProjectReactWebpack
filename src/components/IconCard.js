@@ -1,5 +1,5 @@
 import React from 'react'
-import Icons from './Icons'
+import {Github} from './Icons'
 
 const card = (props) => {
     // const styleSheets = {
@@ -13,7 +13,7 @@ const card = (props) => {
     switch (props.icon) {
         case 'Github':
             Icon = (
-                <Icons.Github
+                <Github
                     width={width}
                     height={height}
                     viewBox={viewBox}

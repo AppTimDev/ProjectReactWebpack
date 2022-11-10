@@ -1,0 +1,90 @@
+.header {
+    background-image: var(--bg-header);    
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.info {
+    max-width: 300px;   
+    min-height: 400px;
+}
+.info-image {
+    width: 80px;
+    height: 80px;
+}
+
+.info-name {
+    font-size: 46px;
+    font-weight: bold;
+    margin: 10px;
+
+    text-shadow: 1px 1px 0 rgba(204, 204, 204, 0.479),
+        2px 2px 0 rgba(204, 204, 204, 0.479),
+        3px 3px 0 rgba(204, 204, 204, 0.479),
+        4px 4px 0 rgba(204, 204, 204, 0.479);
+}
+
+.info-description {
+    font-size: 26px;
+    margin: 10px;
+    color: rgba(30, 46, 100, 0.479);
+}
+
+.tag {
+    background-color: var(--color-tag-outer);
+    width: fit-content;
+}
+
+.tag-inner {
+    background-color: var(--color-tag-inner);
+}
+.tag-inner>svg {
+    fill: var(--color-tag-text);
+}
+
+.tag-inner>span {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-tag-text);
+}
+/*============ BREAKPOINTS ============*/
+/* Default screen devices */
+.px-info{
+    padding-left: 30px;
+}
+.py-info{
+    padding-top: 5px;
+    padding-bottom: 30px;
+}
+/* Small screen devices (596px and above) */
+@media screen and (min-width: 596px) {
+    .sm\:px-info{
+        padding-left: 100px;
+    }
+}
+/* Large screen devices */
+@media screen and (min-width: 992px) {
+    .lg\:px-info{
+        padding-left: 200px;
+    }
+}
+@media screen and (min-height: 375px) {
+    .sm\:py-info{
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+}
+@media screen and (min-height: 500px) {
+    .md\:py-info{
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+}
+@media screen and (min-height: 800px) {
+    .lg\:py-info{
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+}

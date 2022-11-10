@@ -1,7 +1,7 @@
-import React from 'react';
-import './Header.scss';
-import infoImg from '../../../icons/android-chrome-192x192.png';
-import {Mail} from '../../../components/Icons'
+import React from 'react'
+import './Header.scss'
+import infoImg from '../../../icons/android-chrome-192x192.png'
+import Icon from '../../../components/Icon'
 
 const Header = () => {
     return (
@@ -19,17 +19,13 @@ const Header = () => {
                     <a
                         className='tag-inner link-email no-link rounded-full flex gap-15px items-center py-8px px-15px lg:py-10px lg:px-20px'
                         href='mailto:apptimdev@gmail.com'>
-                        <Mail
-                            width='24'
-                            height='24'
-                            viewBox='0 0 24 24'                            
-                        />
+                        <Icon icon='Mail' />
                         <span>apptimdev@gmail.com</span>
                     </a>
                 </div>
             </div>
         </div>
     )
-};
+}
 
-export default Header;
+export default Header

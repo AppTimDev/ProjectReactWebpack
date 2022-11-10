@@ -1,45 +1,41 @@
 import React from 'react';
 import MainSubsection from './MainSubsection'
+import LinksSection from './LinksSection'
+import ProjectsSection from './ProjectsSection'
+import BannerSection from './BannerSection'
+import GallerySection from './GallerySection'
 
 const MainSection = (props) => {
-    const elLink = <>
-        <div>links</div>
-    </>
-    const elProject = <div>elProject</div>
-
     const subsection = [
         {
             key: 'links',
             title:'links',
-            seeMore: false
+            seeMore: false,
+            ele: <LinksSection/>
         },{
             key: 'projects',
             title:'projects',
             seeMore: true,
-            link: 'https://github.com/AppTimDev?tab=repositories'
+            link: 'https://github.com/AppTimDev?tab=repositories',
+            ele: <ProjectsSection/>
         },{
             key: 'banner',
             title:'banner',
-            seeMore: false
+            seeMore: false,
+            ele: <BannerSection/>
         },{
             key: 'gallery',
             title:'gallery',
-            seeMore: false
+            seeMore: false,
+            ele: <GallerySection/>
         }
-    ]
-
-    const elMap = {
-        'links': elLink,
-        'projects': elProject,
-        'banner': elProject,
-        'gallery': elProject
-    }
+    ];
     return (
         <div className='mx-auto max-w-1024px px-10px lg:px-20px flex flex-col gap-40px'>
             {
                 subsection.map((obj)=>
                     <MainSubsection key={obj.key} title={obj.title} seeMore={obj.seeMore} link={obj.link}>
-                        {elMap[obj.key]}
+                        {obj.ele}
                     </MainSubsection>
                 )
             }

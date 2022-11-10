@@ -7,7 +7,7 @@ const MainSubsection = (props) => {
             <div className="flex items-center justify-between">
                 <span className="uppercase font-bold text-18px">{props.title}</span>
                 {props.seeMore ? <a href={props.link} className="main-subsection-top-more no-link rounded-full uppercase font-bold text-14px py-5px px-20px" target="_blank">See more</a> : <></>}
-            </div>            
+            </div>
             {props.children}
         </div>
     );

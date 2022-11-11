@@ -9,18 +9,18 @@ export function App() {
     return (
         <BrowserRouter>
             <Routes>
-                {/* <Route path="/"  element={<Navbar />}> */}
-                <Route path="/" >
+                <Route path="/"  element={<Home />} />
+                <Route path="/Home" element={<Home />} />
+                <Route path="/Login" element={<Login />} />
+                <Route path="*" element={<PageNotFound />} />
+
+                {/* relative path */}
+                <Route path="/react" >
                     <Route index element={<Home />} />
                     <Route path="Home" element={<Home />} />
                     <Route path="Login" element={<Login />} />
                     <Route path="*" element={<PageNotFound />} />
                 </Route>
-                <Route path="/react" >
-                    <Route index element={<Home />} />
-                    <Route path="*" element={<PageNotFound />} />
-                </Route>
-
             </Routes>
         </BrowserRouter>
     );

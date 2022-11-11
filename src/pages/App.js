@@ -16,6 +16,11 @@ export function App() {
                     <Route path="Login" element={<Login />} />
                     <Route path="*" element={<PageNotFound />} />
                 </Route>
+                <Route path="/react" >
+                    <Route index element={<Home />} />
+                    <Route path="*" element={<PageNotFound />} />
+                </Route>
+
             </Routes>
         </BrowserRouter>
     );

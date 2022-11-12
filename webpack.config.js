@@ -6,15 +6,16 @@ module.exports = {
     entry: ['./src/index.js'],
     output: {
         path: path.join(__dirname, 'dest'),
-        // filename: 'bundle.min.js',
         filename: 'bundle.[contenthash].js',
+        publicPath: '/',
 
         assetModuleFilename: 'images/[hash][ext]',
         clean: true
     },
     devServer: {
-        port: 8000,
-        static: path.join(__dirname, 'dest')
+        port: 3000,
+        static: path.join(__dirname, 'dest'),
+        historyApiFallback: true
     },
     module: {
         rules: [{

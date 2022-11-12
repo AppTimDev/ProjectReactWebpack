@@ -54,17 +54,20 @@ html {
     min-height: 100vh;
 }
 
-.list-none{
+.list-none {
     list-style-type: none;
-}	
+}
+
 /*============ position ============*/
 
 .relative {
     position: relative;
 }
+
 .absolute {
     position: absolute;
 }
+
 /*============ flex ============*/
 
 .flex {
@@ -78,7 +81,8 @@ html {
 .flex-nowrap {
     flex-wrap: nowrap;
 }
-.flex-wrap-reverse	{
+
+.flex-wrap-reverse {
     flex-wrap: wrap-reverse;
 }
 
@@ -152,15 +156,18 @@ html {
     grid-gap: 40px;
     gap: 40px;
 }
+
 @media (min-width: 768px) {
     .md\:gap-30px {
         grid-gap: 30px;
         gap: 30px;
     }
 }
-.grid-cols-2{
+
+.grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+
 /* Small screen devices (596px and above) */
 @media screen and (min-width: 596px) {
     .sm\:grid-cols-2 {
@@ -173,17 +180,20 @@ html {
     .md\:grid-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
     .md\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    
-    .md\:auto-rows-min{
+
+    .md\:auto-rows-min {
         grid-auto-rows: min-content;
     }
 }
-.auto-rows-min{
+
+.auto-rows-min {
     grid-auto-rows: min-content;
 }
+
 /*============ Common margin padding size ============*/
 .max-w-1024px {
     max-width: 1024px;
@@ -202,10 +212,12 @@ html {
     margin-top: auto;
     margin-bottom: auto;
 }
+
 .py-5px {
     padding-top: 5px;
     padding-bottom: 5px
 }
+
 .px-8px {
     padding-left: 8px;
     padding-right: 8px;
@@ -220,13 +232,16 @@ html {
     padding-left: 10px;
     padding-right: 10px;
 }
+
 .py-10px {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
 .pb-10px {
     padding-bottom: 10px;
 }
+
 .px-15px {
     padding-left: 15px;
     padding-right: 15px;
@@ -236,6 +251,7 @@ html {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
 .px-20px {
     padding-left: 20px;
     padding-right: 20px;
@@ -366,6 +382,11 @@ html {
     border-top-right-radius: 50px;
 }
 
+/*============ text ============*/
+.break-words {
+    overflow-wrap: break-word;
+}
+
 /*============ font ============*/
 .uppercase {
     text-transform: uppercase;
@@ -447,44 +468,57 @@ html {
     -o-object-fit: cover;
     object-fit: cover;
 }
+
 .aspect-square {
     aspect-ratio: 1 / 1;
 }
+
 /*============ Size ============*/
 .h-100px {
     height: 100px;
 }
-.h-120px{
+
+.h-120px {
     height: 120px;
 }
-.h-200px{
+
+.h-200px {
     height: 200px;
 }
-.h-300px{
+
+.h-300px {
     height: 300px;
 }
+
 .w-full {
     width: 100%;
 }
+
 .h-full {
     height: 100%;
 }
+
 .overflow-hidden {
     overflow: hidden;
 }
+
 @media (min-width: 768px) {
     .md\:h-100px {
         height: 100px;
     }
-    .md\:h-120px{
+
+    .md\:h-120px {
         height: 120px;
     }
-    .md\:h-300px{
+
+    .md\:h-300px {
         height: 300px;
     }
+
     .md\:w-full {
         width: 100%;
     }
+
     .md\:h-full {
         height: 100%;
     }
@@ -492,13 +526,15 @@ html {
 }
 
 /*============ common use ============*/
-.card{
+.card {
     background-color: var(--bg-color-card-description);
 }
-.card-icon{
+
+.card-icon {
     height: 30px;
     width: 30px;
 }
+
 a.link-email>svg {
     fill: red;
 }

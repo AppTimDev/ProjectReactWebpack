@@ -2,7 +2,7 @@ import React from 'react'
 
 const card = (props) => {
     const styleSheets = {
-        'backgroundColor': 'var(--bg-color-card-description)'
+        backgroundColor: 'var(--bg-color-card-description)'
     }
     return (
         <a
@@ -17,7 +17,7 @@ const card = (props) => {
                 alt={props.alt}
                 loading={!props.lazy ? '' : 'lazy'}
             />
-            <div className='flex flex-col flex-1 uppercase p-20px px-25px'>
+            <div className='flex flex-col flex-1 uppercase p-20px px-25px break-words'>
                 <span className='font-bold'>{props.title}</span>
                 <span className='font-semibold opacity-70 text-xs leading-5'>
                     {props.content}

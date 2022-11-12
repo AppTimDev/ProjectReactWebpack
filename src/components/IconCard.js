@@ -13,7 +13,7 @@ const card = (props) => {
             width={width}
             height={height}
             viewBox={props.viewBox}
-            fill={props.color}
+            fill={props.fill}
         />
     )
     return (

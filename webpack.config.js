@@ -1,13 +1,14 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: ['./src/index.js'],
     output: {
         path: path.join(__dirname, 'dest'),
         filename: 'bundle.[contenthash].js',
-        publicPath: '/',
+        publicPath: '/react/',
 
         assetModuleFilename: 'images/[hash][ext]',
         clean: true
@@ -41,16 +42,24 @@ module.exports = {
                 test: /\.svg$/i,
                 issuer: /\.(js|jsx)$/,
                 use: ['@svgr/webpack']
-            } 
+            }
         ]
     },
     plugins: [new MiniCssExtractPlugin({
-        // filename: '[name].[contenthash:6].css',
-        filename: 'bundle.[contenthash:6].css',
-    }),
+            // filename: '[name].[contenthash:6].css',
+            filename: 'bundle.[contenthash:6].css',
+        }),
         new HTMLWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
             filename: 'index.html'
-        })
+        }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, './src/favicon.ico'),
+                    to: path.resolve(__dirname, './dest')
+                }
+            ]
+        }),
     ],
 }

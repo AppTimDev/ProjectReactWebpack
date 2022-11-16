@@ -9,7 +9,6 @@ import './css/root.css';
 import './css/scrollbar.css';
 import './css/common.css';
 
-// import './css/App.scss';
 
 // const root = document.getElementById('app');
 // ReactDOM.render(<App />, root);

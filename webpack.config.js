@@ -2,11 +2,16 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const webpack = require("webpack");
+
+//define variables used in react
+const version_number = 'v2'
 
 module.exports = (env) => {
-    //console.log(env);
-    const isProduction = !!env.production; 
-    //console.log(isProduction);
+    //const isProduction = !!env.production;    
+    const isProduction = process.env.NODE_ENV === 'production'
+    const version = isProduction ? `production_${version_number}` : `dev_${version_number}`
+
     return {
         entry: ['./src/index.js'],
         output: {
@@ -23,7 +28,7 @@ module.exports = (env) => {
             historyApiFallback: true
         },
         // devtool : isProduction ? 'source-map' :'inline-source-map',
-        devtool : isProduction ? undefined:'inline-source-map',
+        devtool: isProduction ? undefined : 'inline-source-map',
         module: {
             rules: [{
                     test: /\.(js|jsx)$/,
@@ -65,6 +70,11 @@ module.exports = (env) => {
                     to: path.resolve(__dirname, './dest')
                 }]
             }),
+            new webpack.DefinePlugin({
+                PRODUCTION: JSON.stringify(true),
+                VERSION: JSON.stringify(version),
+                'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+            })
         ],
     }
 }

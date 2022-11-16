@@ -3,14 +3,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
+const {version_number, config} = require("./config");
 
 //define variables used in react
-const version_number = 'v2'
+//const version_number = 'v2'
 
 module.exports = (env) => {
     //const isProduction = !!env.production;    
     const isProduction = process.env.NODE_ENV === 'production'
-    const version = isProduction ? `production_${version_number}` : `dev_${version_number}`
+    const CONFIG = isProduction ? config.production : config.development
+    //const version = isProduction ? `production_${version_number}` : `dev_${version_number}`
+    const { version } = CONFIG
 
     return {
         entry: ['./src/index.js'],
@@ -23,7 +26,7 @@ module.exports = (env) => {
             clean: true
         },
         devServer: {
-            port: 3000,
+            port: 8080,
             static: path.join(__dirname, 'dest'),
             historyApiFallback: true
         },

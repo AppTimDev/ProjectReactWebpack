@@ -4,7 +4,7 @@ const config = {
     production: {
         version: `production_${version_number}`,
         public_url: '/react',
-        api_url: 'http://localhost:3000/react/api'
+        api_url: 'http://localhost:8000/react/api'
     },
     development: {
         version: `development_${version_number}`,

@@ -4,19 +4,35 @@ import { redirect } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 const postLogin = (navigate) => {
-    const url = ApiUrl('/login')
-
-    fetch(url, { method: 'POST', redirect: 'follow' })
+    const url = ApiUrl('/user/login')
+    
+    //test
+    let body = {
+        name:"tim",
+        password:"123"
+    }
+    const headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    }
+    //redirect: 'follow',
+    fetch(url, { 
+            method: 'POST',            
+            headers: headers,
+            body: JSON.stringify(body)
+        })
         .then((res) => {
             console.log(res)
-            console.log(res.status)
+            console.log(`status: ${res.status}`)
             return res.json()
         })
         .then((res) => {
-            // HTTP 301 response
             console.log('json:')
-            console.log(res)
-            return navigate(Url('/'))
+            console.log('respose: ', res)
+            if(res && res.redirect && res.path){
+                //return navigate(Url('/'))
+                return navigate(Url(res.path))
+            }
         })
         .catch(function (err) {
             console.info(err + ' url: ' + url)

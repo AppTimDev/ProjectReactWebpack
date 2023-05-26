@@ -65,7 +65,7 @@ npm i --save react react-dom react-router-dom
 ### `npm run dev`
 Runs the app in development mode and the dev server (Port 3000).
 
-Open http://localhost:3000 to view it in the browser
+Open http://localhost:8080 to view it in the browser
 
 ### `npm run build`
 Builds for production to the dest folder.

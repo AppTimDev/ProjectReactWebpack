@@ -13,18 +13,6 @@ export function App() {
                 <Route path={Url("/home")} element={<Home />} />
                 <Route path={Url("/login")} element={<Login />} />
                 <Route path={Url("/*")} element={<PageNotFound />} />
-                {/* <Route path="/"  element={<Home />} />
-                <Route path="/Home" element={<Home />} />
-                <Route path="/Login" element={<Login />} />
-                <Route path="*" element={<PageNotFound />} /> */}
-
-                {/* relative path */}
-                {/* <Route path="/react" >
-                    <Route index element={<Home />} />
-                    <Route path="Home" element={<Home />} />
-                    <Route path="Login" element={<Login />} />
-                    <Route path="*" element={<PageNotFound />} />
-                </Route> */}
             </Routes>
         </BrowserRouter>
     );

@@ -3,24 +3,23 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
-const {version_number, config} = require("./config");
-
-//define variables used in react
-//const version_number = 'v2'
+const {config} = require("./config");
 
 module.exports = (env) => {
-    //const isProduction = !!env.production;    
+    console.log('webpack.config:')
+    //const isProduction = !!env.production;
     const isProduction = process.env.NODE_ENV === 'production'
-    const CONFIG = isProduction ? config.production : config.development
-    //const version = isProduction ? `production_${version_number}` : `dev_${version_number}`
-    const { version } = CONFIG
+    console.log(`isProduction; ${isProduction}`)
+
+    const { version, public_url, api_url } = config
+    console.log(config)
 
     return {
         entry: ['./src/index.js'],
         output: {
             path: path.join(__dirname, 'dest'),
             filename: 'bundle.[contenthash].js',
-            publicPath: isProduction ? '/react/' : '/',
+            publicPath: public_url,
 
             assetModuleFilename: 'images/[hash][ext]',
             clean: true
@@ -73,8 +72,8 @@ module.exports = (env) => {
                     to: path.resolve(__dirname, './dest')
                 }]
             }),
+            //define variables used in react
             new webpack.DefinePlugin({
-                PRODUCTION: JSON.stringify(true),
                 VERSION: JSON.stringify(version),
                 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
             })
